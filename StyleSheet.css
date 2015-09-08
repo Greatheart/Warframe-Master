@@ -22,6 +22,11 @@ body {
   background-color:#515151;
 }
 
+select option{
+    background-color:white;
+    color:#515151;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 
@@ -46,7 +51,7 @@ nav,
 section,
 summary {
   display: block;
-  background-color:#515151;
+    background-color:#515151;
 }
 
 /**
