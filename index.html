@@ -22,87 +22,87 @@
                 var s2 = document.getElementById(slct2);
                 s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
-                    var optionArray = ["*RIFLES*",
+                    var optionArray = ["-RIFLES-",
             "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
-            "*RIFLE - CONTINUOUS*",
+            "-RIFLE - CONTINUOUS-",
             "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
-            "*SHOTGUNS*",
+            "-SHOTGUNS-",
             "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris",
-            "*SNIPERS*",
+            "-SNIPERS-",
             "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar", "BOWS", "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime",
-            "*LAUNCHERS*",
+            "-LAUNCHERS-",
             "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
                 } else if (s1.value == "SecondaryWeapons") {
-                    var optionArray = ["*SINGLE*",
+                    var optionArray = ["-SINGLE-",
                             "Acrid", "Angstrum", "Ballistica", "Rakta Ballistica", "Bolto", "Cestra", "Furis", "MK1-Furis", "Kraken", "Kulstar", "Lato", "Lato Prime", "Lato Vandal", "Lex", "Lex Prime", "Magnus", "Marelok", "Vaykor Marelok", "Seer", "Sicarus", "Sicarus Prime", "Stug", "Tysis", "Vasto", "Vasto Prime", "Viper",
-                        "*CONTINUOUS*",
+                        "-CONTINUOUS-",
                             "Atomos", "Embolist", "Gammacor", "Synoid Gammacor", "Nukor", "Spectra",
-                        "*SHOTGUNS*",
+                        "-SHOTGUNS-",
                             "Brakk", "Bronco", "Bronco Prime", "Detron", "Mara Detron", "Kohmak", "Pyrana",
-                        "*DUAL*",
+                        "-DUAL-",
                             "Afuris", "Dex Furis", "Akbolto", "Telos Akbolto", "Akbronco", "Akbronco Prime", "Akjagara", "Aklato", "Aklex", "Akmagnus", "Aksomati", "Akstiletto", "Akvasto", "Akzani", "Dual Cestra", "Secura Dual Cestra", "Twin Grakatas", "Twin Gremlins", "Twin Vipers", "Wraith Twin Vipers",
-                        "*THROWN*",
+                        "-THROWN-",
                             "Castanas", "Sancti Castanas", "Despair", "Hikou", "Hikou Prime", "Kunai", "MK1-Kunai"];
                 } else if (s1.value == "MeleeWeapons") {
-                    var optionArray = ["*SWORD*",
+                    var optionArray = ["-SWORD-",
                             "Cronus", "Dakra Prime", "Dark Sword", "Dark Sword", "Ether Sword", "Heat Sword", "Jaw Sword", "Mire", "Pangolin Sword", "Plasma Sword", "Skana", "Skana Prime", "Prisma Skana",
-                        "*DUAL SWORDS*",
+                        "-DUAL SWORDS-",
                             "Dex Dakra", "Dual Cleavers", "Prisma Dual Cleavers", "Dual Ether", "Dual Heat Swords", "Dual Ichor", "Dual Kamas", "Dual Raza", "Dual Skana", "Dual Zoren", "Nami Skyla",
-                        "*DAGGER*",
+                        "-DAGGER-",
                             "Ceramic Dagger", "Dark Dagger", "Heat Dagger", "Karyst", "Sheev",
-                        "*DUAL DAGGERS*",
+                        "-DUAL DAGGERS-",
                             "Ether Daggers", "Fang", "Fang Prime",
-                        "*MACHETE*",
+                        "-MACHETE-",
                             "Kama", "Machete", "Machete Wraith", "Nami Solo", "Prova", "Prova Vandal",
-                        "*FIST*",
+                        "-FIST-",
                             "Ankyros", "Ankyros Prime", "Furax", "MK1-Furax",
-                        "*SWORD-SHIELD*",
+                        "-SWORD-SHIELD-",
                             "Silva & Aegis", "Ack & Brunt",
-                        "*SPARRING*",
+                        "-SPARRING-",
                             "Kogake", "Obex",
-                        "*POLEARM*",
+                        "-POLEARM-",
                             "Orthos", "Orthos Prime", "Serro", "Tonbo",
-                        "*STAFF*",
+                        "-STAFF-",
                             "Amphis", "Bo", "MK1-Bo", "Bo Prime", "Tipedo",
-                        "*GLAIVE*",
+                        "-GLAIVE-",
                             "Cerata", "Glaive", "Glaive Prime", "Halikar", "Kestrel",
-                        "*WHIP*",
+                        "-WHIP-",
                             "Atterax", "Lecta", "Scoliac",
-                        "*HEAVY BLADE*",
+                        "-HEAVY BLADE-",
                             "Galatine", "Gram", "Scindo", "Scindo Prime",
-                        "*HAMMER*",
+                        "-HAMMER-",
                             "Fragor", "Jat Kittag", "Magistar",
-                        "*NIKANA*",
+                        "-NIKANA-",
                             "Nikana", "Dragon Nikana",
-                        "*CLAWS*",
+                        "-CLAWS-",
                             "Ripkas", "Venka",
-                        "*SCYTHE*",
+                        "-SCYTHE-",
                             "Anku", "Ether Reaper", "Hate", "Reaper Prime",
-                        "*TONFA*",
+                        "-TONFA-",
                             "Boltace", "Kronen",
-                        "*GUNBLADE*",
+                        "-GUNBLADE-",
                             "Redeemer"];
                 } else if (s1.value == "Warframes") {
                     var optionArray = ["Ash", "Ash Prime", "Banshee", "Chroma", "Ember", "Ember Prime", "Equinox", "Excalibur", "Excalibur Prime", "Frost", "Frost Prime", "Hydroid", "Limbo", "Loki", "Loki Prime", "Mag", "Mag Prime", "Mesa", "Mirage", "Nekros", "Nova", "Nova Prime", "Nyx", "Nyx Prime", "Oberon", "Rhino", "Rhino Prime", "Saryn", "Trinity", "Valkyr", "Vauban", "Volt", "Volt Prime", "Zephyr"];
                 } else if (s1.value == "Sentinels") {
                     var optionArray = ["Carrier", "Carrier Prime", "Dethcube", "Diriga", "Djinn", "Helios", "Shade", "Prisma Shade", "Wyrm", "Wyrm Prime"];
                 } else if (s1.value == "SentinelWeapons") {
-                    var optionArray = ["*RIFLES*",
+                    var optionArray = ["-RIFLES-",
                             "Deth Machine Rifle", "Laser Rifle", "Laser Rifle Prime", "Stinger",
-                        "*SHOTGUNS*",
+                        "-SHOTGUNS-",
                             "Sweeper", "Sweeper Prime",
-                        "*SNIPERS*",
+                        "-SNIPERS-",
                             "Vulklok",
-                        "*SIDEARMS*",
+                        "-SIDEARMS-",
                             "Burst Laser", "Prisma Burst Laser",
-                        "*MELEE*",
+                        "-MELEE-",
                             "Deconstructor"];
                 } else if (s1.value == "Archwings") {
                     var optionArray = ["Elytron", "Itzal", "Odonata", "Odonata Prime"];
                 } else if (s1.value == "ArchwingWeapons") {
-                    var optionArray = ["*GUN*",
+                    var optionArray = ["-GUN-",
                             "Corvas", "Dual Decurion", "Fluctus", "Grattler", "Imperator", "Imperator Vandal", "Velocitus",
-                        "*MELEE*",
+                        "-MELEE-",
                             "Centaur", "Knux", "Onorix", "Rathbone", "Veritux", "Prisma Veritux"];
                 } else if (s1.value == "Kubrows") {
                     var optionArray = ["Huras", "Raksa", "Sahasa", "Sunika", "Chesa"];
@@ -112,23 +112,24 @@
                 if (optionArray.hasOwnProperty(option)) {
                     var pair = optionArray[option];
                     var checkbox = document.createElement("input");
-                    var savedVar = localStorage.getItem(pair);
+                    var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
 
-                    if (pair.slice(0, 1) != "*") {
+                    if (pair.slice(0, 1) != "-") {
                         if(savedVar || savedVar === "") {
                             alert(pair);
                         } else {
-                            localStorage.SetItem(pair, "false");
-                            var savedVar = localStorage.getItem(pair);
+                            alert(savedVar);
+                            localStorage.SetItem(pair.replace(/\s+/g, ''), "false");
+                            var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
                         }
                         
                         checkbox.type = "checkbox";
                         checkbox.name = pair;
                         checkbox.value = pair;
-                        checkbox.checked = boolean(savedVar);
+                        //checkbox.checked = boolean(savedVar);
                         
                         s2.appendChild(checkbox);
-                    } else if (pair.slice(0, 1) == "*") {
+                    } else if (pair.slice(0, 1) == "-") {
                         s2.appendChild(document.createElement("br"));
                     }
             
