@@ -8,12 +8,6 @@
         <script>
           google.load("jquery", "1.4.1");
          </script>
-         
-         <script type="text/javascript">
-            function checkboxChanged {
-                alert("derp");
-             }
-         </script>
           
         <script type="text/javascript">
             function populate(slct1, slct2) {
@@ -126,9 +120,9 @@
                         //checkbox.checked = boolean(savedVar);
             
                         checkbox.onchange = function() {
-                            var bool = true;
+                            var bool = checkbox.checked;
                             var x = bool.toString();
-                                alert(checkbox.name);
+                                alert(pair);
                             localStorage.SetItem(checkbox.name.replace(/\s+/g, ''), x);
                         };
                         
