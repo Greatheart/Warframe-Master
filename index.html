@@ -7,25 +7,73 @@
         <script src="http://www.google.com/jsapi"></script>
         <script>
           google.load("jquery", "1.4.1");
+         </script>
+          
+        <script type="text/javascript">
+            function populate(slct1, slct2) {
+                var s1 = document.getElementById(slct1);
+                var s2 = document.getElementById(slct2);
+                s2.innerHTML = "";
+                if (s1.value == "PrimaryWeapons") {
+                    var optionArray = ["Subcat1", "Subcat1.1", "Subcat1.2"];
+                } else if (s1.value == "SecondaryWeapons") {
+                    var optionArray = ["Subcat2", "Subcat2.1", "Subcat2.2"];
+                } else if (s1.value == "MeleeWeapons") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "Warframes") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "Sentinels") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "SentinelWeapons") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "Archwings") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "Archwing Weapons") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+                } else if (s1.value == "Kubrows") {
+                    var optionArray = ["Subcat3", "Subcat3.1", "Subcat3.3"];
+            }
+        
+            for (var option in optionArray) {
+                if (optionArray.hasOwnProperty(option)) {
+                    var pair = optionArray[option];
+                    var checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.name = pair;
+                    checkbox.value = pair;
+                    s2.appendChild(checkbox);
+            
+                    var label = document.createElement('label')
+                    label.htmlFor = pair;
+                    label.appendChild(document.createTextNode(pair));
+        
+                    s2.appendChild(label);
+                    s2.appendChild(document.createElement("br"));    
+                }
+            }
+        }
         </script>
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="#">Primary Weapons</a></li>
-                <li><a href="#">Secondary Weapons</a></li>
-                <li><a href="#">Melee Weapons</a></li>
-                <li><a href="#">Warframes</a></li>
-                <li><a href="#">Sentinels</a></li>
-                <li><a href="#">Sentinel Weapons</a></li>
-                <li><a href="#">Archwings</a></li>
-                <li><a href="#">Archwing Weapons</a></li>
-                <li><a href="#">Kubrows</a></li>
-            </ul>
-        </nav>
-        <iframe src="#">
-            
-        </iframe>
+        <h2>Warframe Master</h2>
+        <br />
+        Choose a Category:
+        <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+           <option value=""></option>
+           <option value="PrimaryWeapons">Primary Weapons</option>
+           <option value="SecondaryWeapons">Secondary Weapons</option>
+           <option value="MeleeWeapons">Melee Weapons</option>
+           <option value="Warframes">Warframes</option>
+           <option value="Sentinels">Sentinels</option>
+           <option value="SentinelWeapons">Sentinel Weapons</option>
+           <option value="Archwings">Archwings</option>
+           <option value="ArchwingWeapons">Archwing Weapons</option>
+           <option value="Kubrows">Kubrows</option>
+        </select>
+        <hr />
+           Tick Mastered Items:
+        <div id="slct2"></div>
+        <hr />
         <footer>
             <hr />
             Created by Greatheart.
