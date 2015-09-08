@@ -10,10 +10,9 @@
          </script>
          
          <script type="text/javascript">
-            function onChange(checkbox) {
-                var bool = checkbox.checked;
-                localStorage.SetItem(checkbox.name, bool.toString());
-            }
+            function checkboxChanged {
+                alert("derp");
+             }
          </script>
           
         <script type="text/javascript">
@@ -125,6 +124,13 @@
                         checkbox.name = pair;
                         checkbox.value = pair;
                         //checkbox.checked = boolean(savedVar);
+            
+                        checkbox.onchange = function() {
+                            var bool = true;
+                            var x = bool.toString();
+                                alert(checkbox.name);
+                            localStorage.SetItem(checkbox.name.replace(/\s+/g, ''), x);
+                        };
                         
                         s2.appendChild(checkbox);
                     } else if (pair.slice(0, 1) == "-") {
