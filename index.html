@@ -8,6 +8,12 @@
         <script>
           google.load("jquery", "1.4.1");
          </script>
+         
+         <script type="text/javascript">
+            function onChange(checkbox) {
+                localStorage[checkbox.name] = checkbox.checked;
+            }
+         </script>
           
         <script type="text/javascript">
             function populate(slct1, slct2) {
@@ -15,7 +21,14 @@
                 var s2 = document.getElementById(slct2);
                 s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
-                    var optionArray = ["*RIFLES*", "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon", "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse", "*SHOTGUNS*", "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris", "*SNIPERS*", "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar", "BOWS", "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime", "*LAUNCHERS*", "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
+                    var optionArray = ["*RIFLES*",
+            "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon", "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
+            "*SHOTGUNS*",
+            "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris",
+            "*SNIPERS*",
+            "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar", "BOWS", "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime",
+            "*LAUNCHERS*",
+            "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
                 } else if (s1.value == "SecondaryWeapons") {
                     var optionArray = ["", "", ""];
                 } else if (s1.value == "MeleeWeapons") {
@@ -40,9 +53,15 @@
                     var checkbox = document.createElement("input");
 
                     if (pair.slice(0, 1) != "*") {
+                        if (localStorage[pair] is null) {
+                            localStorage[pair] = false;
+                        }
+                        
                         checkbox.type = "checkbox";
                         checkbox.name = pair;
                         checkbox.value = pair;
+                        checkbox.checked = localStorage[pair]
+                        
                         s2.appendChild(checkbox);
                     } else if (pair.slice(0, 1) == "*") {
                         s2.appendChild(document.createElement("br"));
@@ -80,7 +99,7 @@
         <div id="slct2"></div>
         <hr />
         <footer>
-            <hr />
+            <br />
             Created by Greatheart.
         </footer>
     </body>
