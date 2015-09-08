@@ -15,7 +15,10 @@
                 var s2 = document.getElementById(slct2);
                 s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
-                    var optionArray = ["Subcat1", "Subcat1.1", "Subcat1.2"];
+                    var optionArray = ["*RIFLES*",
+                                            "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", Prisma Tetra"", "Tiberon", "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
+                                        "*SHOTGUNS*",
+                                            "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris"];
                 } else if (s1.value == "SecondaryWeapons") {
                     var optionArray = ["Subcat2", "Subcat2.1", "Subcat2.2"];
                 } else if (s1.value == "MeleeWeapons") {
@@ -38,10 +41,14 @@
                 if (optionArray.hasOwnProperty(option)) {
                     var pair = optionArray[option];
                     var checkbox = document.createElement("input");
-                    checkbox.type = "checkbox";
-                    checkbox.name = pair;
-                    checkbox.value = pair;
-                    s2.appendChild(checkbox);
+                    var res = str.charAt(0)
+                    
+                    If res <> "*" Then
+                        checkbox.type = "checkbox";
+                        checkbox.name = pair;
+                        checkbox.value = pair;
+                        s2.appendChild(checkbox);
+                    End If
             
                     var label = document.createElement('label')
                     label.htmlFor = pair;
