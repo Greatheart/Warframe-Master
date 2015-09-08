@@ -24,7 +24,7 @@
                 if (s1.value == "PrimaryWeapons") {
                     var optionArray = ["-RIFLES-",
             "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
-            "-RIFLE - CONTINUOUS-",
+            "-RIFLE- (CONTINUOUS)",
             "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
             "-SHOTGUNS-",
             "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris",
@@ -115,12 +115,10 @@
                     var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
 
                     if (pair.slice(0, 1) != "-") {
-                        if(savedVar || savedVar === "") {
-                            alert(pair);
-                        } else {
-                            alert(savedVar);
-                            localStorage.SetItem(pair.replace(/\s+/g, ''), "false");
-                            var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
+                        if (savedVar == null || savedVar.isEmpty()) {
+                            //localStorage.SetItem(pair.replace(/\s+/g, ''), "false");
+                            //var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
+                            //alert("pair: " + pair + "   savedVar: " + savedVar);
                         }
                         
                         checkbox.type = "checkbox";
