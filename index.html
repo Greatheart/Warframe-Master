@@ -2,7 +2,7 @@
 <html>
     <head>
         <!-- https://jsfiddle.net/ -->
-        <title>Sample HTML5 Layout</title>
+        <title>Warframe Master</title>
         <link href="StyleSheet.css" rel="stylesheet" />
         <script src="http://www.google.com/jsapi"></script>
         <script>
@@ -15,16 +15,7 @@
                 var s2 = document.getElementById(slct2);
                 s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
-                    var optionArray = ["*RIFLES*",
-                                            "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", Prisma Tetra"", "Tiberon", "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
-                                        "*SHOTGUNS*",
-                                            "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris",
-                                        "*SNIPERS*",
-                                            "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar",
-                                        "*BOWS*",
-                                            "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime",
-                                        "*LAUNCHERS*",
-                                            "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
+                    var optionArray = ["*RIFLES*", "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon", "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse", "*SHOTGUNS*", "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris", "*SNIPERS*", "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar", "BOWS", "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime", "*LAUNCHERS*", "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
                 } else if (s1.value == "SecondaryWeapons") {
                     var optionArray = ["", "", ""];
                 } else if (s1.value == "MeleeWeapons") {
@@ -37,11 +28,8 @@
                     var optionArray = ["", "", ""];
                 } else if (s1.value == "Archwings") {
                     var optionArray = ["Elytron", "Itzal", "Odonata", "Odonata Prime"];
-                } else if (s1.value == "Archwing Weapons") {
-                    var optionArray = ["*GUN*",
-                                            "Corvas", "Dual Decurion", "Fluctus", "Grattler", "Imperator", "Imperator Vandal", "Velocitus",
-                                        "*MELEE*",
-                                            "Centaur", "Knux", "Onorix", "Rathbone", "Veritux", "Prisma Veritux"];
+                } else if (s1.value == "ArchwingWeapons") {
+                    var optionArray = ["*GUN*", "Corvas", "Dual Decurion", "Fluctus", "Grattler", "Imperator", "Imperator Vandal", "Velocitus", "*MELEE*", "Centaur", "Knux", "Onorix", "Rathbone", "Veritux", "Prisma Veritux"];
                 } else if (s1.value == "Kubrows") {
                     var optionArray = ["Huras", "Raksa", "Sahasa", "Sunika", "Chesa"];
             }
@@ -50,14 +38,15 @@
                 if (optionArray.hasOwnProperty(option)) {
                     var pair = optionArray[option];
                     var checkbox = document.createElement("input");
-                    var res = str.charAt(0)
-                    
-                    If res <> "*" Then
+
+                    if (pair.slice(0, 1) != "*") {
                         checkbox.type = "checkbox";
                         checkbox.name = pair;
                         checkbox.value = pair;
                         s2.appendChild(checkbox);
-                    End If
+                    } else if (pair.slice(0, 1) == "*") {
+                        s2.appendChild(document.createElement("br"));
+                    }
             
                     var label = document.createElement('label')
                     label.htmlFor = pair;
