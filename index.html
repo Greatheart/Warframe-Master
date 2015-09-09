@@ -27,7 +27,7 @@
             
                 if (s1.value == "PrimaryWeapons") {
                     var optionArray = ["-RIFLES-",
-            "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
+            "Boltor", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
             "-RIFLE- (CONTINUOUS)",
             "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
             "-SHOTGUNS-",
@@ -151,15 +151,37 @@
             }
             //s2.appendChild("</fieldset>");
         }
+        
+        
+        function changePage() {
+            var s1 = document.getElementById(slct1);
+            
+            if (s1.value == "PrimaryWeapons") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            } else if (s1.value == "Warframes") {
+            
+            }
+        }
         </script>
     </head>
     <body>
-        <div data-role="page" id="page1">
-            <div data-role="header">
-                <h4>Warframe Master</h4>
-                <br />
+                <!-- <br />
                 Choose a Category:
-                <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+                <select id="slct1" name="slct1" onchange="changePage()"> onchange="populate(this.id, 'slct2')">
                    <option value=""></option>
                    <option value="PrimaryWeapons">Primary Weapons</option>
                    <option value="SecondaryWeapons">Secondary Weapons</option>
@@ -170,24 +192,49 @@
                    <option value="Archwings">Archwings</option>
                    <option value="ArchwingWeapons">Archwing Weapons</option>
                    <option value="Kubrows">Kubrows</option>
-                </select>
-                <hr />
-            </div>
+                </select> -->
+        <div data-role="page" id="Warframes">
             <div data-role="content">
                 <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <a href="#PrimaryWeapons" data-role="button">Next: Primary Weapons</a>
+                    <br />
                     <form>
                         <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
                             <h4>Select Mastered Items:</h4>
-                            <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" class="custom1">
-                            <label for="checkbox-h-2a">One</label>
+                            <br />
+                            <input type="checkbox" name="checkbox_Boltor" id="checkbox_Boltor" class="custom1"><label for="checkbox_Boltor">Boltor</label>
+                            <input type="checkbox" name="checkbox_BoltorPrime" id="checkbox_BoltorPrime" class="custom1"><label for="checkbox_BoltorPrime">Boltor Prime</label>
+                            <input type="checkbox" name="checkbox_TelosBoltor" id="checkbox_TelosBoltor" class="custom1"><label for="checkbox_TelosBoltor">Telos Boltor</label>
                         </fieldset>
                     </form>
                 </div>
             </div>
+        </div>
+        <div data-role="page" id="PrimaryWeapons">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <a href="#Warframes" data-role="button">Prev: Warframes</a><a href="#SecondaryWeapons" data-role="button">Next: Secondary Weapons</a>
+                    <br />
+                    <form>
+                        <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                            <h4>Select Mastered Items:</h4>
+                            <br />
+                            <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
             <div data-role="footer">
                 Created by Greatheart. &nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
             </div>
-        </div>
+        
     </body>
 </html>
 
