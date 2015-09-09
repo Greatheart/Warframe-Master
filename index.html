@@ -20,7 +20,8 @@
                 var fs = [];
                 var i = 0;
             
-                s2.innerHTML = "";
+            s2.innerHTML = '<legend><h4>Select Mastered Items:</h4></legend>';
+            
                 if (s1.value == "PrimaryWeapons") {
                     var optionArray = ["-RIFLES-",
             "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
@@ -151,11 +152,11 @@
     <body>
         <div data-role="page" id="page1">
             <div data-role="header">
-                <h1>Warframe Master</h1>
+                <h4>Warframe Master</h4>
                 <br />
                 Choose a Category:
                 <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
-                   <option value=""></option>
+                   <option value="Choose Weapon Type"></option>
                    <option value="PrimaryWeapons">Primary Weapons</option>
                    <option value="SecondaryWeapons">Secondary Weapons</option>
                    <option value="MeleeWeapons">Melee Weapons</option>
@@ -172,7 +173,7 @@
                 <div data-role="fieldcontain">
                     <form>
                         <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
-                            <legend>Select Mastered Items:</legend>
+                            <legend><h4>Select Mastered Items:</h4></legend>
                             <input type="checkbox" name="checkbox" id="checkbox" class="custom1">
                             <label for="checkbox">One</label>
                         </fieldset>
@@ -180,15 +181,10 @@
                 </div>
                 <!-- <a href="#page2" data-role="button">Save</a> -->
             </div>
+            <div data-role="footer">
+                Created by Greatheart. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
+            </div>
         </div>
-
-        <br />
-        <hr />
-        <footer>
-            <input id="save-btn" type="button" value="Save">
-            <br />
-            Created by Greatheart.
-        </footer>
     </body>
 </html>
 
