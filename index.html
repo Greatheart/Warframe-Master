@@ -5,17 +5,20 @@
         <title>Warframe Master</title>
         <link href="StyleSheet.css" rel="stylesheet" />
         <script src="http://www.google.com/jsapi"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript">
             window.onload = loadCode;
             
             function loadCode() {
-               google.load("jquery", "1.4.1");
+               google.load("jquery", "1.4.4");    //1.4.1
             }
             
             function populate(slct1, slct2) {
                 var s1 = document.getElementById(slct1);
                 var s2 = document.getElementById(slct2);
                 var fs = [];
+                var i = 0;
             
                 s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
@@ -109,26 +112,26 @@
                 if (optionArray.hasOwnProperty(option)) {
                     var pair = optionArray[option];
                     var pair2 = pair.replace(/\s+/g, '');
-                    var checkbox = document.createElement("input");
-                    var savedVar = localStorage.getItem(pair2);
+                    //var savedVar = localStorage.getItem(pair2);
 
                     if (pair.slice(0, 1) != "-") {
-                        if (savedVar == null || savedVar.isEmpty()) {
+                        //if (savedVar == null || savedVar.isEmpty()) {
                             //localStorage.SetItem(pair2, "false");
                             //var savedVar = localStorage.getItem(pair2);
                             //alert("pair: " + pair + "   savedVar: " + savedVar);
-                        }
-                        
-                        checkbox.type = "checkbox";
-                        checkbox.name = pair;
-                        checkbox.value = pair;
-                        checkbox.id = pair2;
-                        //checkbox.checked = boolean(savedVar);
+                        //}
             
-                        fs['pair2'] = new Function('pair2', 'return alert(pair2);');
-                        checkbox.onchange = fs['pair2'];
+                        i++;
+                        var checkbox = document.createElement("input");
+                            checkbox.type = "checkbox";
+                            checkbox.name = "checkbox";
+                            //checkbox.value = pair;
+                            checkbox.id = "checkbox";
+                            checkbox.className = "custom1";
+                            //checkbox.checked = boolean(savedVar);
                         
                         s2.appendChild(checkbox);
+            
                     } else if (pair.slice(0, 1) == "-") {
                         s2.appendChild(document.createElement("br"));
                     }
@@ -141,32 +144,57 @@
                     s2.appendChild(document.createElement("br"));
                 }
             }
+            //s2.appendChild("</fieldset>");
         }
         </script>
     </head>
     <body>
-        <h2>Warframe Master</h2>
+        <div data-role="page" id="page1">
+            <div data-role="header">
+                <h1>Warframe Master</h1>
+                <br />
+                Choose a Category:
+                <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
+                   <option value=""></option>
+                   <option value="PrimaryWeapons">Primary Weapons</option>
+                   <option value="SecondaryWeapons">Secondary Weapons</option>
+                   <option value="MeleeWeapons">Melee Weapons</option>
+                   <option value="Warframes">Warframes</option>
+                   <option value="Sentinels">Sentinels</option>
+                   <option value="SentinelWeapons">Sentinel Weapons</option>
+                   <option value="Archwings">Archwings</option>
+                   <option value="ArchwingWeapons">Archwing Weapons</option>
+                   <option value="Kubrows">Kubrows</option>
+                </select>
+                <hr />
+            </div>
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <form>
+                        <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                            <legend>Select Mastered Items:</legend>
+                            <input type="checkbox" name="checkbox" id="checkbox" class="custom1">
+                            <label for="checkbox">One</label>
+                        </fieldset>
+                    </form>
+                </div>
+                <!-- <a href="#page2" data-role="button">Save</a> -->
+            </div>
+        </div>
+
         <br />
-        Choose a Category:
-        <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
-           <option value=""></option>
-           <option value="PrimaryWeapons">Primary Weapons</option>
-           <option value="SecondaryWeapons">Secondary Weapons</option>
-           <option value="MeleeWeapons">Melee Weapons</option>
-           <option value="Warframes">Warframes</option>
-           <option value="Sentinels">Sentinels</option>
-           <option value="SentinelWeapons">Sentinel Weapons</option>
-           <option value="Archwings">Archwings</option>
-           <option value="ArchwingWeapons">Archwing Weapons</option>
-           <option value="Kubrows">Kubrows</option>
-        </select>
-        <hr />
-           Tick Mastered Items:
-        <div id="slct2"></div>
         <hr />
         <footer>
+            <input id="save-btn" type="button" value="Save">
             <br />
             Created by Greatheart.
         </footer>
     </body>
 </html>
+
+
+
+
+
+
+
