@@ -15,8 +15,9 @@
             function populate(slct1, slct2) {
                 var s1 = document.getElementById(slct1);
                 var s2 = document.getElementById(slct2);
-                s2.innerHTML = "";
+                var fs = [];
             
+                s2.innerHTML = "";
                 if (s1.value == "PrimaryWeapons") {
                     var optionArray = ["-RIFLES-",
             "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
@@ -124,7 +125,7 @@
                         checkbox.id = pair2;
                         //checkbox.checked = boolean(savedVar);
             
-                        fs['pair2'] = new Function('pair2', 'return alert("hello, " + pair2 + "!");');
+                        fs['pair2'] = new Function('pair2', 'return alert(pair2);');
                         checkbox.onchange = fs['pair2'];
                         
                         s2.appendChild(checkbox);
