@@ -3,10 +3,13 @@
     <head>
         <!-- https://jsfiddle.net/ -->
         <title>Warframe Master</title>
+        <link href="jquery.mobile-1.3.2.min.css" rel="stylesheet" />
         <link href="StyleSheet.css" rel="stylesheet" />
-        <script src="http://www.google.com/jsapi"></script>
-        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"></script>
-        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        
+        <!-- <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"></script>
+        <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script> -->
+        
+        <script src="jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript">
             window.onload = loadCode;
             
@@ -114,7 +117,9 @@
                     var pair = optionArray[option];
                     var pair2 = pair.replace(/\s+/g, '');
                     //var savedVar = localStorage.getItem(pair2);
-
+            
+                    i++;
+            
                     if (pair.slice(0, 1) != "-") {
                         //if (savedVar == null || savedVar.isEmpty()) {
                             //localStorage.SetItem(pair2, "false");
@@ -122,15 +127,14 @@
                             //alert("pair: " + pair + "   savedVar: " + savedVar);
                         //}
             
-                        i++;
                         var checkbox = document.createElement("input");
                             checkbox.type = "checkbox";
-                            checkbox.name = "checkbox";
+                            checkbox.name = "checkbox-h-2a";
                             //checkbox.value = pair;
-                            checkbox.id = "checkbox";
+                            checkbox.id = "checkbox-h-2a";
                             checkbox.className = "custom1";
                             //checkbox.checked = boolean(savedVar);
-                        
+
                         s2.appendChild(checkbox);
             
                     } else if (pair.slice(0, 1) == "-") {
@@ -138,7 +142,7 @@
                     }
             
                     var label = document.createElement('label')
-                    label.htmlFor = pair;
+                    label.htmlFor = "checkbox-h-2a";
                     label.appendChild(document.createTextNode(pair));
         
                     s2.appendChild(label);
@@ -156,7 +160,7 @@
                 <br />
                 Choose a Category:
                 <select id="slct1" name="slct1" onchange="populate(this.id, 'slct2')">
-                   <option value="Choose Weapon Type"></option>
+                   <option value=""></option>
                    <option value="PrimaryWeapons">Primary Weapons</option>
                    <option value="SecondaryWeapons">Secondary Weapons</option>
                    <option value="MeleeWeapons">Melee Weapons</option>
@@ -173,16 +177,15 @@
                 <div data-role="fieldcontain">
                     <form>
                         <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
-                            <legend><h4>Select Mastered Items:</h4></legend>
-                            <input type="checkbox" name="checkbox" id="checkbox" class="custom1">
-                            <label for="checkbox">One</label>
+                            <h4>Select Mastered Items:</h4>
+                            <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a" class="custom1">
+                            <label for="checkbox-h-2a">One</label>
                         </fieldset>
                     </form>
                 </div>
-                <!-- <a href="#page2" data-role="button">Save</a> -->
             </div>
             <div data-role="footer">
-                Created by Greatheart. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
+                Created by Greatheart. &nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
             </div>
         </div>
     </body>
