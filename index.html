@@ -5,15 +5,18 @@
         <title>Warframe Master</title>
         <link href="StyleSheet.css" rel="stylesheet" />
         <script src="http://www.google.com/jsapi"></script>
-        <script>
-          google.load("jquery", "1.4.1");
-         </script>
-          
         <script type="text/javascript">
+            window.onload = loadCode;
+            
+            function loadCode() {
+               google.load("jquery", "1.4.1");
+            }
+            
             function populate(slct1, slct2) {
                 var s1 = document.getElementById(slct1);
                 var s2 = document.getElementById(slct2);
                 s2.innerHTML = "";
+            
                 if (s1.value == "PrimaryWeapons") {
                     var optionArray = ["-RIFLES-",
             "Bolter", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
@@ -104,27 +107,25 @@
             for (var option in optionArray) {
                 if (optionArray.hasOwnProperty(option)) {
                     var pair = optionArray[option];
+                    var pair2 = pair.replace(/\s+/g, '');
                     var checkbox = document.createElement("input");
-                    var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
+                    var savedVar = localStorage.getItem(pair2);
 
                     if (pair.slice(0, 1) != "-") {
                         if (savedVar == null || savedVar.isEmpty()) {
-                            //localStorage.SetItem(pair.replace(/\s+/g, ''), "false");
-                            //var savedVar = localStorage.getItem(pair.replace(/\s+/g, ''));
+                            //localStorage.SetItem(pair2, "false");
+                            //var savedVar = localStorage.getItem(pair2);
                             //alert("pair: " + pair + "   savedVar: " + savedVar);
                         }
                         
                         checkbox.type = "checkbox";
                         checkbox.name = pair;
                         checkbox.value = pair;
+                        checkbox.id = pair2;
                         //checkbox.checked = boolean(savedVar);
             
-                        checkbox.onchange = function() {
-                            var bool = checkbox.checked;
-                            var x = bool.toString();
-                                alert(pair);
-                            localStorage.SetItem(checkbox.name.replace(/\s+/g, ''), x);
-                        };
+                        fs['pair2'] = new Function('pair2', 'return alert("hello, " + pair2 + "!");');
+                        checkbox.onchange = fs['pair2'];
                         
                         s2.appendChild(checkbox);
                     } else if (pair.slice(0, 1) == "-") {
@@ -136,7 +137,7 @@
                     label.appendChild(document.createTextNode(pair));
         
                     s2.appendChild(label);
-                    s2.appendChild(document.createElement("br"));    
+                    s2.appendChild(document.createElement("br"));
                 }
             }
         }
