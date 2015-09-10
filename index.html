@@ -86,8 +86,6 @@
                             "Boltace", "Kronen",
                         "-GUNBLADE-",
                             "Redeemer"];
-                } else if (s1.value == "Warframes") {
-                    var optionArray = ["Ash", "Ash Prime", "Banshee", "Chroma", "Ember", "Ember Prime", "Equinox", "Excalibur", "Excalibur Prime", "Frost", "Frost Prime", "Hydroid", "Limbo", "Loki", "Loki Prime", "Mag", "Mag Prime", "Mesa", "Mirage", "Nekros", "Nova", "Nova Prime", "Nyx", "Nyx Prime", "Oberon", "Rhino", "Rhino Prime", "Saryn", "Trinity", "Valkyr", "Vauban", "Volt", "Volt Prime", "Zephyr"];
                 } else if (s1.value == "Sentinels") {
                     var optionArray = ["Carrier", "Carrier Prime", "Dethcube", "Diriga", "Djinn", "Helios", "Shade", "Prisma Shade", "Wyrm", "Wyrm Prime"];
                 } else if (s1.value == "SentinelWeapons") {
@@ -101,80 +99,6 @@
                             "Burst Laser", "Prisma Burst Laser",
                         "-MELEE-",
                             "Deconstructor"];
-                } else if (s1.value == "Archwings") {
-                    var optionArray = ["Elytron", "Itzal", "Odonata", "Odonata Prime"];
-                } else if (s1.value == "ArchwingWeapons") {
-                    var optionArray = ["-GUN-",
-                            "Corvas", "Dual Decurion", "Fluctus", "Grattler", "Imperator", "Imperator Vandal", "Velocitus",
-                        "-MELEE-",
-                            "Centaur", "Knux", "Onorix", "Rathbone", "Veritux", "Prisma Veritux"];
-                } else if (s1.value == "Kubrows") {
-                    var optionArray = ["Huras", "Raksa", "Sahasa", "Sunika", "Chesa"];
-            }
-        
-            for (var option in optionArray) {
-                if (optionArray.hasOwnProperty(option)) {
-                    var pair = optionArray[option];
-                    var pair2 = pair.replace(/\s+/g, '');
-                    //var savedVar = localStorage.getItem(pair2);
-            
-                    i++;
-            
-                    if (pair.slice(0, 1) != "-") {
-                        //if (savedVar == null || savedVar.isEmpty()) {
-                            //localStorage.SetItem(pair2, "false");
-                            //var savedVar = localStorage.getItem(pair2);
-                            //alert("pair: " + pair + "   savedVar: " + savedVar);
-                        //}
-            
-                        var checkbox = document.createElement("input");
-                            checkbox.type = "checkbox";
-                            checkbox.name = "checkbox-h-2a";
-                            //checkbox.value = pair;
-                            checkbox.id = "checkbox-h-2a";
-                            checkbox.className = "custom1";
-                            //checkbox.checked = boolean(savedVar);
-
-                        s2.appendChild(checkbox);
-            
-                    } else if (pair.slice(0, 1) == "-") {
-                        s2.appendChild(document.createElement("br"));
-                    }
-            
-                    var label = document.createElement('label')
-                    label.htmlFor = "checkbox-h-2a";
-                    label.appendChild(document.createTextNode(pair));
-        
-                    s2.appendChild(label);
-                    s2.appendChild(document.createElement("br"));
-                }
-            }
-            //s2.appendChild("</fieldset>");
-        }
-        
-        
-        function changePage() {
-            var s1 = document.getElementById(slct1);
-            
-            if (s1.value == "PrimaryWeapons") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            } else if (s1.value == "Warframes") {
-            
-            }
         }
         </script>
     </head>
@@ -183,14 +107,18 @@
                 Choose a Category:
                 <select id="slct1" name="slct1" onchange="changePage()"> onchange="populate(this.id, 'slct2')">
                    <option value=""></option>
+
+                   <option value="Warframes">Warframes</option>
                    <option value="PrimaryWeapons">Primary Weapons</option>
                    <option value="SecondaryWeapons">Secondary Weapons</option>
                    <option value="MeleeWeapons">Melee Weapons</option>
-                   <option value="Warframes">Warframes</option>
+
                    <option value="Sentinels">Sentinels</option>
                    <option value="SentinelWeapons">Sentinel Weapons</option>
+
                    <option value="Archwings">Archwings</option>
                    <option value="ArchwingWeapons">Archwing Weapons</option>
+
                    <option value="Kubrows">Kubrows</option>
                 </select> -->
         <div data-role="page" id="Warframes">
@@ -199,42 +127,265 @@
                     <div data-role="header">
                         <h4>Warframe Master</h4>
                     </div>
-                    <a href="#PrimaryWeapons" data-role="button">Next: Primary Weapons</a>
-                    <br />
-                    <form>
-                        <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
-                            <h4>Select Mastered Items:</h4>
-                            <br />
-                            <input type="checkbox" name="checkbox_Boltor" id="checkbox_Boltor" class="custom1"><label for="checkbox_Boltor">Boltor</label>
-                            <input type="checkbox" name="checkbox_BoltorPrime" id="checkbox_BoltorPrime" class="custom1"><label for="checkbox_BoltorPrime">Boltor Prime</label>
-                            <input type="checkbox" name="checkbox_TelosBoltor" id="checkbox_TelosBoltor" class="custom1"><label for="checkbox_TelosBoltor">Telos Boltor</label>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="" data-role="button">Prev: N/A</a><a href="#PrimaryWeapons" data-role="button">Next: Primary Weapons Weapons</a>
                         </fieldset>
-                    </form>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkbox_Ash" id="checkbox_Ash" class="custom1"><label for="checkbox_Ash">Ash</label>
+                                <input type="checkbox" name="checkbox_AshPrime" id="checkbox_AshPrime" class="custom1"><label for="checkbox_AshPrime">Ash Prime</label>
+                                <input type="checkbox" name="checkbox_Banshee" id="checkbox_Banshee" class="custom1"><label for="checkbox_Banshee">Banshee</label>
+                                <input type="checkbox" name="checkbox_Chroma" id="checkbox_Chroma" class="custom1"><label for="checkbox_Chroma">Chroma</label>
+                                <input type="checkbox" name="checkbox_Ember" id="checkbox_Ember" class="custom1"><label for="checkbox_Ember">Ember</label>
+                                <input type="checkbox" name="checkbox_EmberPrime" id="checkbox_EmberPrime" class="custom1"><label for="checkbox_EmberPrime">Ember Prime</label>
+                                <input type="checkbox" name="checkbox_Equinox" id="checkbox_Equinox" class="custom1"><label for="checkbox_Equinox">Equinox</label>
+                                <input type="checkbox" name="checkbox_Excalibur" id="checkbox_Excalibur" class="custom1"><label for="checkbox_Excalibur">Ash</label>
+                                <input type="checkbox" name="checkbox_ExcaliburPrime" id="checkbox_ExcaliburPrime" class="custom1"><label for="checkbox_ExcaliburPrime">Excalibur Prime</label>
+                                <input type="checkbox" name="checkbox_Frost" id="checkbox_Frost" class="custom1"><label for="checkbox_Frost">Frost</label>
+                                <input type="checkbox" name="checkbox_FrostPrime" id="checkbox_FrostPrime" class="custom1"><label for="checkbox_FrostPrime">Frost Prime</label>
+                                <input type="checkbox" name="checkbox_Hydroid" id="checkbox_Hydroid" class="custom1"><label for="checkbox_Hydroid">Hydroid</label>
+                                <input type="checkbox" name="checkbox_Limbo" id="checkbox_Limbo" class="custom1"><label for="checkbox_Limbo">Limbo</label>
+                                <input type="checkbox" name="checkbox_Loki" id="checkbox_Loki" class="custom1"><label for="checkbox_Loki">Loki</label>
+                                <input type="checkbox" name="checkbox_LokiPrime" id="checkbox_LokiPrime" class="custom1"><label for="checkbox_LokiPrime">Loki Prime</label>
+                                <input type="checkbox" name="checkbox_Mag" id="checkbox_Mag" class="custom1"><label for="checkbox_Mag">Mag</label>
+                                <input type="checkbox" name="checkbox_MagPrime" id="checkbox_MagPrime" class="custom1"><label for="checkbox_MagPrime">Mag Prime</label>
+                                <input type="checkbox" name="checkbox_Mesa" id="checkbox_Mesa" class="custom1"><label for="checkbox_Mesa">Mesa</label>
+                                <input type="checkbox" name="checkbox_Mirage" id="checkbox_Mirage" class="custom1"><label for="checkbox_Mirage">Mirage</label>
+                                <input type="checkbox" name="checkbox_Nekros" id="checkbox_Nekros" class="custom1"><label for="checkbox_Nekros">Nekros</label>
+                                <input type="checkbox" name="checkbox_Nova" id="checkbox_Nova" class="custom1"><label for="checkbox_Nova">Nova</label>
+                                <input type="checkbox" name="checkbox_NovaPrime" id="checkbox_NovaPrime" class="custom1"><label for="checkbox_NovaPrime">Nova Prime</label>
+                                <input type="checkbox" name="checkbox_Nyx" id="checkbox_Nyx" class="custom1"><label for="checkbox_Nyx">Nyx</label>
+                                <input type="checkbox" name="checkbox_NyxPrime" id="checkbox_NyxPrime" class="custom1"><label for="checkbox_NyxPrime">Nyx Prime</label>
+                                <input type="checkbox" name="checkbox_Oberon" id="checkbox_Oberon" class="custom1"><label for="checkbox_Oberon">Oberon</label>
+                                <input type="checkbox" name="checkbox_Rhino" id="checkbox_Rhino" class="custom1"><label for="checkbox_Rhino">Rhino</label>
+                                <input type="checkbox" name="checkbox_RhinoPrime" id="checkbox_RhinoPrime" class="custom1"><label for="checkbox_RhinoPrime">Rhino Prime</label>
+                                <input type="checkbox" name="checkbox_Saryn" id="checkbox_Saryn" class="custom1"><label for="checkbox_Saryn">Saryn</label>
+                                <input type="checkbox" name="checkbox_Trinity" id="checkbox_Trinity" class="custom1"><label for="checkbox_Trinity">Trinity</label>
+                                <input type="checkbox" name="checkbox_Valkyr" id="checkbox_Valkyr" class="custom1"><label for="checkbox_Valkyr">Valkyr</label>
+                                <input type="checkbox" name="checkbox_Vauban" id="checkbox_Vauban" class="custom1"><label for="checkbox_Vauban">Vauban</label>
+                                <input type="checkbox" name="checkbox_Volt" id="checkbox_Volt" class="custom1"><label for="checkbox_Volt">Volt</label>
+                                <input type="checkbox" name="checkbox_VoltPrime" id="checkbox_VoltPrime" class="custom1"><label for="checkbox_VoltPrime">Volt Prime</label>
+                                <input type="checkbox" name="checkbox_Zephyr" id="checkbox_Zephyr" class="custom1"><label for="checkbox_Zephyr">Zephyr</label>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+                                    
         <div data-role="page" id="PrimaryWeapons">
             <div data-role="content">
                 <div data-role="fieldcontain">
                     <div data-role="header">
                         <h4>Warframe Master</h4>
                     </div>
-                    <a href="#Warframes" data-role="button">Prev: Warframes</a><a href="#SecondaryWeapons" data-role="button">Next: Secondary Weapons</a>
-                    <br />
-                    <form>
-                        <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
-                            <h4>Select Mastered Items:</h4>
-                            <br />
-                            <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#Warframes" data-role="button">Prev: Warframes</a><a href="#SecondaryWeapons" data-role="button">Next: Secondary Weapons</a>
                         </fieldset>
-                    </form>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-            <div data-role="footer">
-                Created by Greatheart. &nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
+            
+        <div data-role="page" id="SecondaryWeapons">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#PrimaryWeapons" data-role="button">Prev: Primary Weapons</a><a href="#MeleeWeapons" data-role="button">Next: Melee Weapons</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
-        
+        </div>
+            
+        <div data-role="page" id="MeleeWeapons">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#SecondaryWeapons" data-role="button">Prev: Secondary Weapons</a><a href="#Sentinels" data-role="button">Next: Sentinels</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div data-role="page" id="Sentinels">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#MeleeWeapons" data-role="button">Prev: Melee Weapons</a><a href="#SentinelWeapons" data-role="button">Next: Sentinel Weapons</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+         <div data-role="page" id="SentinelWeapons">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#Sentinels" data-role="button">Prev: Sentinels</a><a href="#Archwings" data-role="button">Next: Archwings</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+        <div data-role="page" id="Archwings">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#SentinelWeapons" data-role="button">Prev: Sentinel Weapons</a><a href="#ArchwingWeapons" data-role="button">Next: Archwing Weapons</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Elytron" id="checkBox_Elytron" class="custom1"><label for="checkBox_Elytron">Elytron</label>
+                                <input type="checkbox" name="checkBox_Itzal" id="checkBox_Itzal" class="custom1"><label for="checkBox_Itzal">Itzal</label>
+                                <input type="checkbox" name="checkBox_Odonata" id="checkBox_Odonata" class="custom1"><label for="checkBox_Odonata">Odonata</label>
+                                <input type="checkbox" name="checkBox_OdonataPrime" id="checkBox_OdonataPrime" class="custom1"><label for="checkBox_OdonataPrime">Odonata Prime</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                        
+        <div data-role="page" id="ArchwingWeapons">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#Archwings" data-role="button">Prev: Archwings</a><a href="#Kubrows" data-role="button">Next: Kubrows</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <label>-GUNS-</label>
+                                <input type="checkbox" name="checkBox_Corvas" id="checkBox_Corvas" class="custom1"><label for="checkBox_Corvas">Corvas</label>
+                                <input type="checkbox" name="checkBox_DualDecurion" id="checkBox_DualDecurion" class="custom1"><label for="checkBox_DualDecurion">Dual Decurion</label>
+                                <input type="checkbox" name="checkBox_Fluctus" id="checkBox_Fluctus" class="custom1"><label for="checkBox_Fluctus">Fluctus</label>
+                                <input type="checkbox" name="checkBox_Grattler" id="checkBox_Grattler" class="custom1"><label for="checkBox_Grattler">Grattler</label>
+                                <input type="checkbox" name="checkBox_Imperator" id="checkBox_Imperator" class="custom1"><label for="checkBox_Imperator">Imperator</label>
+                                <input type="checkbox" name="checkBox_ImperatorVandal" id="checkBox_ImperatorVandal" class="custom1"><label for="checkBox_ImperatorVandal">Imperator Vandal</label>
+                                <input type="checkbox" name="checkBox_Velocitus" id="checkBox_Velocitus" class="custom1"><label for="checkBox_Velocitus">Velocitus</label>
+                                <br />
+                                <label>-MELEE-</label>
+                                <input type="checkbox" name="checkBox_Centaur" id="checkBox_Centaur" class="custom1"><label for="checkBox_Centaur">Centaur</label>
+                                <input type="checkbox" name="checkBox_Knux" id="checkBox_Knux" class="custom1"><label for="checkBox_Knux">Knux</label>
+                                <input type="checkbox" name="checkBox_Onorix" id="checkBox_Onorix" class="custom1"><label for="checkBox_Onorix">Onorix</label>
+                                <input type="checkbox" name="checkBox_Rathbone" id="checkBox_Rathbone" class="custom1"><label for="checkBox_Rathbone">Rathbone</label>
+                                <input type="checkbox" name="checkBox_Veritux" id="checkBox_Veritux" class="custom1"><label for="checkBox_Veritux">Veritux</label>
+                                <input type="checkbox" name="checkBox_PrismaVeritux" id="checkBox_PrismaVeritux" class="custom1"><label for="checkBox_PrismaVeritux">Prisma Veritux</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="Kubrows">
+            <div data-role="content">
+                <div data-role="fieldcontain">
+                    <div data-role="header">
+                        <h4>Warframe Master</h4>
+                    </div>
+                    <div data-role="body">
+                        <fieldset data-role="controlgroup" data-type="horizontal" id="navbar">
+                            <a href="#ArchwingWeapons" data-role="button">Prev: Archwing Weapons</a><a href="" data-role="button">Next: N/A</a>
+                        </fieldset>
+                        <br />
+                        <form>
+                            <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
+                                <h4>Select Mastered Items:</h4>
+                                <br />
+                                <input type="checkbox" name="checkBox_Huras" id="checkBox_Huras" class="custom1"><label for="checkBox_Huras">Huras</label>
+                                <input type="checkbox" name="checkBox_Raksa" id="checkBox_Raksa" class="custom1"><label for="checkBox_Raksa">Raksa</label>
+                                <input type="checkbox" name="checkBox_Sahasa" id="checkBox_Sahasa" class="custom1"><label for="checkBox_Sahasa">Sahasa</label>
+                                <input type="checkbox" name="checkBox_Sunika" id="checkBox_Sunika" class="custom1"><label for="checkBox_Sunika">Sunika</label>
+                                <input type="checkbox" name="checkBox_Chesa" id="checkBox_Chesa" class="custom1"><label for="checkBox_Chesa">Chesa</label>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                            
+        <div data-role="footer">
+            Created by Greatheart. &nbsp;&nbsp;&nbsp; <input id="save-btn" type="button" value="Save">
+        </div>
     </body>
 </html>
 
