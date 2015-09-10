@@ -17,25 +17,8 @@
                google.load("jquery", "1.4.4");    //1.4.1
             }
             
-            function populate(slct1, slct2) {
-                var s1 = document.getElementById(slct1);
-                var s2 = document.getElementById(slct2);
-                var fs = [];
-                var i = 0;
-            
             s2.innerHTML = '<legend><h4>Select Mastered Items:</h4></legend>';
             
-                if (s1.value == "PrimaryWeapons") {
-                    var optionArray = ["-RIFLES-",
-            "Boltor", "Boltor Prime", "Telos Boltor", "Braton", "MK1-Braton", "Braton Prime", "Braton Vandal", "Burston", "Burston Prime", "Buzlok", "Dera", "Dera Vandal", "Gorgon", "Prisma Gorgon", "Gorgon Wraith", "Grakata", "Prisma Grakata", "Grinlok", "Harpak", "Hind", "Karak", "Karak Wraith", "Latron", "Latron Prime", "Latron Wraith", "Mutalist Quanta", "Opticor", "Paracyst", "Soma", "Soma Prime", "Supra", "Sybaris", "Tetra", "Prisma Tetra", "Tiberon",
-            "-RIFLE- (CONTINUOUS)",
-            "Amprex", "Flux Rifle", "Glaxion", "Ignis", "Quanta", "Quanta Vandal", "Synapse",
-            "-SHOTGUNS-",
-            "Boar", "Boar Prime", "Drakgoon", "Hek", "Vaykor Hek", "Kohm", "Phage", "Sobek", "Strun", "MK1-Strun", "Strun Wraith", "Tigris", "Sancti Tigris",
-            "-SNIPERS-",
-            "Lanka", "Snipetron", "Snipetron Vandal", "Vectis", "Vectis Prime", "Vulkar", "BOWS", "Attica", "Cernos", "Rakta Cernos", "Daikyu", "Dread", "Paris", "MK1-Paris", "Paris Prime",
-            "-LAUNCHERS-",
-            "Miter", "Ogris", "Panthera", "Penta", "Secura Penta", "Simulor", "Synoid Simulor", "Tonkor", "Torid"];
                 } else if (s1.value == "SecondaryWeapons") {
                     var optionArray = ["-SINGLE-",
                             "Acrid", "Angstrum", "Ballistica", "Rakta Ballistica", "Bolto", "Cestra", "Furis", "MK1-Furis", "Kraken", "Kulstar", "Lato", "Lato Prime", "Lato Vandal", "Lex", "Lex Prime", "Magnus", "Marelok", "Vaykor Marelok", "Seer", "Sicarus", "Sicarus Prime", "Stug", "Tysis", "Vasto", "Vasto Prime", "Viper",
@@ -168,7 +151,95 @@
                             <fieldset data-role="controlgroup" data-type="vertical" id="slct2">
                                 <h4>Select Mastered Items:</h4>
                                 <br />
-                                <input type="checkbox" name="checkBox_Boltor2" id="checkBox_Boltor2" class="custom1"><label for="checkBox_Boltor2">Boltor</label>
+                                <label>-RIFLES-</label>
+                                <input type="checkbox" name="checkBox_Boltor" id="checkBox_Boltor" class="custom1"><label for="checkBox_Boltor">Boltor</label>
+                                <input type="checkbox" name="checkBox_BoltorPrime" id="checkBox_BoltorPrime" class="custom1"><label for="checkBox_BoltorPrime">Boltor Prime</label>
+                                <input type="checkbox" name="checkBox_TelosBoltor" id="checkBox_TelosBoltor" class="custom1"><label for="checkBox_TelosBoltor">Telos Boltor</label>
+                                <input type="checkbox" name="checkBox_Braton" id="checkBox_Braton" class="custom1"><label for="checkBox_Braton">Braton</label>
+                                <input type="checkbox" name="checkBox_MK1-Braton" id="checkBox_MK1-Braton" class="custom1"><label for="checkBox_MK1-Braton">MK1-Braton</label>
+                                <input type="checkbox" name="checkBox_BratonPrime" id="checkBox_BratonPrime" class="custom1"><label for="checkBox_BratonPrime">Braton Prime</label>
+                                <input type="checkbox" name="checkBox_BratonVandal" id="checkBox_BratonVandal" class="custom1"><label for="checkBox_BratonVandal">Braton Vandal</label>
+                                <input type="checkbox" name="checkBox_Burston" id="checkBox_Burston" class="custom1"><label for="checkBox_Burston">Burston</label>
+                                <input type="checkbox" name="checkBox_BurstonPrime" id="checkBox_BurstonPrime" class="custom1"><label for="checkBox_BurstonPrime">Burston Prime</label>
+                                <input type="checkbox" name="checkBox_Buzlok" id="checkBox_Buzlok" class="custom1"><label for="checkBox_Buzlok">Buzlok</label>
+                                <input type="checkbox" name="checkBox_Dera" id="checkBox_Dera" class="custom1"><label for="checkBox_Dera">Dera</label>
+                                <input type="checkbox" name="checkBox_DeraVandal" id="checkBox_DeraVandal" class="custom1"><label for="checkBox_DeraVandal">Dera Vandal</label>
+                                <input type="checkbox" name="checkBox_Gorgon" id="checkBox_Gorgon" class="custom1"><label for="checkBox_Gorgon">Gorgon</label>
+                                <input type="checkbox" name="checkBox_PrismaGorgon" id="checkBox_PrismaGorgon" class="custom1"><label for="checkBox_PrismaGorgon">Prisma Gorgon</label>
+                                <input type="checkbox" name="checkBox_GorgonWraith" id="checkBox_GorgonWraith" class="custom1"><label for="checkBox_GorgonWraith">Gorgon Wraith</label>
+                                <input type="checkbox" name="checkBox_Grakata" id="checkBox_Grakata" class="custom1"><label for="checkBox_Grakata">Grakata</label>
+                                <input type="checkbox" name="checkBox_PrismaGrakata" id="checkBox_PrismaGrakata" class="custom1"><label for="checkBox_PrismaGrakata">Prisma Grakata</label>
+                                <input type="checkbox" name="checkBox_Grinlok" id="checkBox_Grinlok" class="custom1"><label for="checkBox_Grinlok">Grinlok</label>
+                                <input type="checkbox" name="checkBox_Harpak" id="checkBox_Harpak" class="custom1"><label for="checkBox_Harpak">Harpak</label>
+                                <input type="checkbox" name="checkBox_Hind" id="checkBox_Hind" class="custom1"><label for="checkBox_Hind">Hind</label>
+                                <input type="checkbox" name="checkBox_Karak" id="checkBox_Karak" class="custom1"><label for="checkBox_Karak">Karak</label>
+                                <input type="checkbox" name="checkBox_KarakWraith" id="checkBox_KarakWraith" class="custom1"><label for="checkBox_KarakWraith">Karak Wraith</label>
+                                <input type="checkbox" name="checkBox_Latron" id="checkBox_Latron" class="custom1"><label for="checkBox_Latron">Latron</label>
+                                <input type="checkbox" name="checkBox_LatronPrime" id="checkBox_LatronPrime" class="custom1"><label for="checkBox_LatronPrime">Latron Prime</label>
+                                <input type="checkbox" name="checkBox_LatronWraith" id="checkBox_LatronWraith" class="custom1"><label for="checkBox_LatronWraith">Latron Wraith</label>
+                                <input type="checkbox" name="checkBox_MutalistQuanta" id="checkBox_MutalistQuanta" class="custom1"><label for="checkBox_MutalistQuanta">Mutalist Quanta</label>
+                                <input type="checkbox" name="checkBox_Opticor" id="checkBox_Opticor" class="custom1"><label for="checkBox_Opticor">Opticor</label>
+                                <input type="checkbox" name="checkBox_Paracyst" id="checkBox_Paracyst" class="custom1"><label for="checkBox_Paracyst">Paracyst</label>
+                                <input type="checkbox" name="checkBox_Soma" id="checkBox_Soma" class="custom1"><label for="checkBox_Soma">Soma</label>
+                                <input type="checkbox" name="checkBox_SomaPrime" id="checkBox_SomaPrime" class="custom1"><label for="checkBox_SomaPrime">Soma Prime</label>
+                                <input type="checkbox" name="checkBox_Supra" id="checkBox_Supra" class="custom1"><label for="checkBox_Supra">Supra</label>
+                                <input type="checkbox" name="checkBox_Sybaris" id="checkBox_Sybaris" class="custom1"><label for="checkBox_Sybaris">Sybaris</label>
+                                <input type="checkbox" name="checkBox_Tetra" id="checkBox_Tetra" class="custom1"><label for="checkBox_Tetra">Tetra</label>
+                                <input type="checkbox" name="checkBox_PrismaTetra" id="checkBox_PrismaTetra" class="custom1"><label for="checkBox_PrismaTetra">Prisma Tetra</label>
+                                <input type="checkbox" name="checkBox_Tiberon" id="checkBox_Tiberon" class="custom1"><label for="checkBox_Tiberon">Tiberon</label>
+
+                                <label>-RIFLES (CONTINUOUS)-</label>
+                                <input type="checkbox" name="checkBox_Amprex" id="checkBox_Amprex" class="custom1"><label for="checkBox_Amprex">Amprex</label>
+                                <input type="checkbox" name="checkBox_FluxRifle" id="checkBox_FluxRifle" class="custom1"><label for="checkBox_FluxRifle">Flux Rifle</label>
+                                <input type="checkbox" name="checkBox_Glaxion" id="checkBox_Glaxion" class="custom1"><label for="checkBox_Glaxion">Glaxion</label>
+                                <input type="checkbox" name="checkBox_Ignis" id="checkBox_Ignis" class="custom1"><label for="checkBox_Ignis">Ignis</label>
+                                <input type="checkbox" name="checkBox_Quanta" id="checkBox_Quanta" class="custom1"><label for="checkBox_Quanta">Quanta</label>
+                                <input type="checkbox" name="checkBox_QuantaVandal" id="checkBox_QuantaVandal" class="custom1"><label for="checkBox_QuantaVandal">Quanta Vandal</label>
+                                <input type="checkbox" name="checkBox_Synapse" id="checkBox_Synapse" class="custom1"><label for="checkBox_Synapse">Synapse</label>
+                                
+                                <label>-SHOTGUNS-</label>
+                                <input type="checkbox" name="checkBox_Boar" id="checkBox_Boar" class="custom1"><label for="checkBox_Boar">Boar</label>
+                                <input type="checkbox" name="checkBox_BoarPrime" id="checkBox_BoarPrime" class="custom1"><label for="checkBox_BoarPrime">Boar Prime</label>
+                                <input type="checkbox" name="checkBox_Drakgoon" id="checkBox_Drakgoon" class="custom1"><label for="checkBox_Drakgoon">Drakgoon</label>
+                                <input type="checkbox" name="checkBox_Hek" id="checkBox_Hek" class="custom1"><label for="checkBox_Hek">Hek</label>
+                                <input type="checkbox" name="checkBox_VaykorHek" id="checkBox_VaykorHek" class="custom1"><label for="checkBox_VaykorHek">Vaykor Hek</label>
+                                <input type="checkbox" name="checkBox_Kohm" id="checkBox_Kohm" class="custom1"><label for="checkBox_Kohm">Kohm</label>
+                                <input type="checkbox" name="checkBox_Phage" id="checkBox_Phage" class="custom1"><label for="checkBox_Phage">Phage</label>
+                                <input type="checkbox" name="checkBox_Sobek" id="checkBox_Sobek" class="custom1"><label for="checkBox_Sobek">Sobek</label>
+                                <input type="checkbox" name="checkBox_Strun" id="checkBox_Strun" class="custom1"><label for="checkBox_Strun">Strun</label>
+                                <input type="checkbox" name="checkBox_MK1-Strun" id="checkBox_MK1-Strun" class="custom1"><label for="checkBox_MK1-Strun">MK1-Strun</label>
+                                <input type="checkbox" name="checkBox_StrunWraith" id="checkBox_StrunWraith" class="custom1"><label for="checkBox_StrunWraith">Strun Wraith</label>
+                                <input type="checkbox" name="checkBox_Tigris" id="checkBox_Tigris" class="custom1"><label for="checkBox_Tigris">Tigris</label>
+                                <input type="checkbox" name="checkBox_SanctiTigris" id="checkBox_SanctiTigris" class="custom1"><label for="checkBox_SanctiTigris">Sancti Tigris</label>
+                                
+                                <label>-SNIPERS-</label>
+                                <input type="checkbox" name="checkBox_Lanka" id="checkBox_Lanka" class="custom1"><label for="checkBox_Lanka">Lanka</label>
+                                <input type="checkbox" name="checkBox_Snipetron" id="checkBox_Snipetron" class="custom1"><label for="checkBox_Snipetron">Snipetron</label>
+                                <input type="checkbox" name="checkBox_SnipetronVandal" id="checkBox_SnipetronVandal" class="custom1"><label for="checkBox_SnipetronVandal">Snipetron Vandal</label>
+                                <input type="checkbox" name="checkBox_Vectis" id="checkBox_Vectis" class="custom1"><label for="checkBox_Vectis">Vectis</label>
+                                <input type="checkbox" name="checkBox_VectisPrime" id="checkBox_VectisPrime" class="custom1"><label for="checkBox_VectisPrime">Vectis Prime</label>
+                                <input type="checkbox" name="checkBox_Vulkar" id="checkBox_Vulkar" class="custom1"><label for="checkBox_Vulkar">Vulkar</label>
+                                
+                                <label>-BOWS-</label>
+                                <input type="checkbox" name="checkBox_Attica" id="checkBox_Attica" class="custom1"><label for="checkBox_Attica">Attica</label>
+                                <input type="checkbox" name="checkBox_Cernos" id="checkBox_Cernos" class="custom1"><label for="checkBox_Cernos">Cernos</label>
+                                <input type="checkbox" name="checkBox_RaktaCernos" id="checkBox_RaktaCernos" class="custom1"><label for="checkBox_RaktaCernos">Rakta Cernos</label>
+                                <input type="checkbox" name="checkBox_Daikyu" id="checkBox_Daikyu" class="custom1"><label for="checkBox_Daikyu">Daikyu</label>
+                                <input type="checkbox" name="checkBox_Dread" id="checkBox_Dread" class="custom1"><label for="checkBox_Dread">Dread</label>
+                                <input type="checkbox" name="checkBox_Paris" id="checkBox_Paris" class="custom1"><label for="checkBox_Paris">Paris</label>
+                                <input type="checkbox" name="checkBox_MK1-Paris" id="checkBox_MK1-Paris" class="custom1"><label for="checkBox_MK1-Paris">MK1-Paris</label>
+                                <input type="checkbox" name="checkBox_Paris Prime" id="checkBox_Paris Prime" class="custom1"><label for="checkBox_Paris Prime">Paris Prime</label>
+                                
+                                <label>-LAUNCHERS-</label>
+                                <input type="checkbox" name="checkBox_Miter" id="checkBox_Miter" class="custom1"><label for="checkBox_Miter">Miter</label>
+                                <input type="checkbox" name="checkBox_Ogris" id="checkBox_Ogris" class="custom1"><label for="checkBox_Ogris">Ogris</label>
+                                <input type="checkbox" name="checkBox_Panthera" id="checkBox_Panthera" class="custom1"><label for="checkBox_Panthera">Panthera</label>
+                                <input type="checkbox" name="checkBox_Penta" id="checkBox_Penta" class="custom1"><label for="checkBox_Penta">Penta</label>
+                                <input type="checkbox" name="checkBox_SecuraPenta" id="checkBox_SecuraPenta" class="custom1"><label for="checkBox_SecuraPenta">Secura Penta</label>
+                                <input type="checkbox" name="checkBox_Simulor" id="checkBox_Simulor" class="custom1"><label for="checkBox_Simulor">Simulor</label>
+                                <input type="checkbox" name="checkBox_SynoidSimulor" id="checkBox_SynoidSimulor" class="custom1"><label for="checkBox_SynoidSimulor">Synoid Simulor</label>
+                                <input type="checkbox" name="checkBox_Tonkor" id="checkBox_Tonkor" class="custom1"><label for="checkBox_Tonkor">Tonkor</label>
+                                <input type="checkbox" name="checkBox_Torid" id="checkBox_Torid" class="custom1"><label for="checkBox_Torid">Torid</label>
                             </fieldset>
                             <br /><div data-role="footer">
                                 Created by Greatheart.
